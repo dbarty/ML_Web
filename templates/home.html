@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ML_Web Demo - FlaskApp</title>
+    <style>
+        nav a {
+            color: #d64161;
+            font-size: 3em;
+            margin-left: 50px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('home') }}">Home</a>
+        <small>
+            <a href="https://github.com/dbarty/ML_Web" target="_blank">Project on GitHub</a>
+        </small>
+    </nav>
+    <hr>
+    <div class="content">
+        {% block content %} {{ content }} {% endblock %}
+
+        <form method="POST" action="/">
+            {{ form.csrf_token }}
+
+            <p>{{ form.input1.label }} {{ form.input1 }}</p>
+            <p>{{ form.input2.label }} {{ form.input2 }}</p>  
+            <p>{{ form.input3.label }} {{ form.input3 }}</p>  
+            <p>{{ form.input4.label }} {{ form.input4 }}</p>  
+
+            <p><input type="submit" value="Send data"></p>
+        </form>
+    </div>
+</body>
+</html>

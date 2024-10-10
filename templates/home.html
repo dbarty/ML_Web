@@ -4,8 +4,32 @@
     <meta charset="UTF-8">
     <title>ML_Web Demo - FlaskApp</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2, h3, h4 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: Consolas, monospace;
+        }
+        .summary {
+            background-color: #e7f3fe;
+            border-left: 6px solid #2196F3;
+            padding: 10px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
         nav a {
-            color: #d64161;
             font-size: 3em;
             margin-left: 50px;
             text-decoration: none;
@@ -26,13 +50,59 @@
         <form method="POST" action="/">
             {{ form.csrf_token }}
 
-            <p>{{ form.input1.label }} {{ form.input1 }}</p>
-            <p>{{ form.input2.label }} {{ form.input2 }}</p>  
-            <p>{{ form.input3.label }} {{ form.input3 }}</p>  
-            <p>{{ form.input4.label }} {{ form.input4 }}</p>  
+            <p>{{ form.sepal_length.label }} {{ form.sepal_length }}</p>
+            <p>{{ form.sepal_width.label }} {{ form.sepal_width }}</p>  
+            <p>{{ form.petal_length.label }} {{ form.petal_length }}</p>  
+            <p>{{ form.petal_width.label }} {{ form.petal_width }}</p>  
 
             <p><input type="submit" value="Send data"></p>
         </form>
+        <hr>
+
+        <h1>Understanding the Four Parameters for Prediction</h1>
+
+        <p>The four parameters used for prediction. In the previous examples, we used the <strong>Iris dataset</strong>, a classic dataset in the machine learning community. This dataset contains measurements of various features of Iris flower species.</p>
+    
+        <h2>Meaning of the Four Parameters</h2>
+    
+        <p>The form contains four numerical values, each representing a specific feature of an Iris flower. Here are the details:</p>
+    
+        <ol>
+            <li><strong>Sepal Length (cm)</strong></li>
+            <li><strong>Sepal Width (cm)</strong></li>
+            <li><strong>Petal Length (cm)</strong></li>
+            <li><strong>Petal Width (cm)</strong></li>
+        </ol>
+    
+        <h3>Detailed Description of the Parameters:</h3>
+    
+        <h4>1. Sepal Length (cm)</h4>
+        <ul>
+            <li><strong>Description:</strong> The length of the sepal of an Iris flower, measured from the base to the tip.</li>
+            <li><strong>Unit:</strong> Centimeters (cm)</li>
+            <li><strong>Example Value:</strong> 5.1</li>
+        </ul>
+    
+        <h4>2. Sepal Width (cm)</h4>
+        <ul>
+            <li><strong>Description:</strong> The width of the sepal of an Iris flower, measured at the midpoint of the sepal.</li>
+            <li><strong>Unit:</strong> Centimeters (cm)</li>
+            <li><strong>Example Value:</strong> 3.5</li>
+        </ul>
+    
+        <h4>3. Petal Length (cm)</h4>
+        <ul>
+            <li><strong>Description:</strong> The length of the petal of an Iris flower, measured from the base to the tip.</li>
+            <li><strong>Unit:</strong> Centimeters (cm)</li>
+            <li><strong>Example Value:</strong> 1.4</li>
+        </ul>
+    
+        <h4>4. Petal Width (cm)</h4>
+        <ul>
+            <li><strong>Description:</strong> The width of the petal of an Iris flower, measured at the widest point.</li>
+            <li><strong>Unit:</strong> Centimeters (cm)</li>
+            <li><strong>Example Value:</strong> 0.2</li>
+        </ul>
     </div>
 </body>
 </html>

@@ -22,10 +22,10 @@ def home():
 
             # get new data for prediction from web users input
             new_data = np.array([[
-                form.input1.data,
-                form.input2.data,
-                form.input3.data,
-                form.input4.data
+                form.sepal_length.data,
+                form.sepal_width.data,
+                form.petal_length.data,
+                form.petal_width.data
             ]])
 
             # make a prediction
